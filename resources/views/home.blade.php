@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Bienvenido al proyecto
+                    
                 </div>
             </div>
         </div>

@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Termas Calientes SA.
+                    Inicio de Proyecto
                 </div>
 
                 <div class="links">
