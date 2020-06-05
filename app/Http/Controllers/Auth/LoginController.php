@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\Usuarios;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -26,7 +28,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    // protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -36,5 +39,46 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    protected function authenticated(Request $request, $user)
+    {
+        if ($user->is_logged) {
+
+            $this->guard()->logout();
+            
+            $request->session()->invalidate();
+
+            return redirect("/")->with("error", "");
+
+        }else{
+
+            $user->is_logged = true;
+            $user->save();
+
+        }
+
+        return redirect($this->redirectPath());
+
+    }
+
+    public function logout(Request $request)
+    {
+        $user = Usuarios::find(auth()->id());
+
+        $user->is_logged = false;
+
+        $user->save();
+
+        $this->guard()->logout();
+        
+        $request->session()->invalidate();
+
+        return $this->loggedOut($request) ? : redirect('/');
+    }
+
+    public function loggedOut(Request $request)
+    {
+        return redirect("/")->with("success", "");
     }
 }
