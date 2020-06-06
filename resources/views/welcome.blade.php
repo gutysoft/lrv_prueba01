@@ -16,7 +16,14 @@
     <link rel="stylesheet" href="{{ url('/') }}/css/plugins/bootstrap.min.css">
     <link rel="stylesheet" href="{{ url('/') }}/css/plugins/notie.css">
     <link rel="stylesheet" href="{{ url('/') }}/css/plugins/adminlte.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <style>
+        div a.btn-panel{
+            height: 120px;
+            min-width: 140px;
+        }
+    </style>
+
 </head>
 
 @if (Route::has('login'))
@@ -24,6 +31,7 @@
 @auth
     
     <body class="hold-transition layout-top-nav">
+
         <div class="wrapper">
 
             
@@ -46,5 +54,9 @@
 @endauth
 
 @endif
+
+<script src="{{ url('/') }}/js/plugins/jquery.min.js"></script>
+<script src="{{ url('/') }}/js/plugins/bootstrap.min.js"></script>
+<script src="{{ url('/') }}/js/plugins/adminlte.min.js"></script>
 
 </html>

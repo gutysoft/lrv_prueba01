@@ -1,3 +1,4 @@
+<script src="{{ url('/') }}/js/plugins/notie.js"></script>
 
 <body class="hold-transition login-page">
     <div class="login-box">
@@ -22,14 +23,14 @@
 
                         @error('email')
 						<span class="invalid-feedback" role="alert">
-							<strong>{{ $message }}</strong>
+							{{ $message }}
 						</span>
 						@enderror
                     </div>
 
                     <div class="input-group mb-3">
 
-                        <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Ingrese su contraseña" required>
+                        <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" autocomplete="email"  autocomplete="current-password" placeholder="Ingrese su contraseña" required>
 
                         <div class="input-group-append">
                             <div class="input-group-text">
@@ -39,7 +40,7 @@
 
                         @error('password')
 						<span class="invalid-feedback" role="alert">
-							<strong>{{ $message }}</strong>
+							{{ $message }}
 						</span>
                         @enderror
                     </div>
@@ -88,9 +89,6 @@
 
 	@endif
 
-    <script src="{{ url('/') }}/js/plugins/jquery.min.js"></script>
-    <script src="{{ url('/') }}/js/plugins/bootstrap.min.js"></script>
-    <script src="{{ url('/') }}/js/plugins/notie.js"></script>
-    <script src="{{ url('/') }}/js/plugins/adminlte.min.js"></script>
+
 
 </body>
