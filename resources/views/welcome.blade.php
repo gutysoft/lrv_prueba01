@@ -34,12 +34,17 @@
 
         <div class="wrapper">
 
-            
-            @include('modulos.header')
-            
-            @yield('content')
 
-            @include('modulos.footer')
+
+                @include('modulos.header')
+                
+                @yield('content')
+
+                @include('modulos.footer')
+                
+
+            
+            
 
         </div>
 

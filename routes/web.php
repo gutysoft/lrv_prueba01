@@ -7,5 +7,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/', 'PanelController');
-Route::get('/panel', 'PanelController@index');
+Route::get('/', 'PanelController@index')->middleware('auth');
+Route::get('/panel', 'PanelController@index')->middleware('auth');
+
+
+Route::get('/', function () {
+    
+    if (Auth::check()) {
+        return view('paginas.panel');
+    }
+    return redirect('/login');
+
+});

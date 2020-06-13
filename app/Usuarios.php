@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notifiable;
 class Usuarios extends Authenticatable
 {
     use Notifiable;
-
     protected $table = 'lrv_usuarios';
 
     protected $fillable = [

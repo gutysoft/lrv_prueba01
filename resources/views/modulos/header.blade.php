@@ -7,13 +7,11 @@
             <span class="brand-text font-weight-dark">Sistema de Ventas</span>
         </a>
 
+
+
         <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
 
-            {{-- <li class="nav-item image">
 
-                <i class="fas fa-store-alt" class="brand-image img-circle elevation-3"></i>
-
-            </li> --}}
 
             <li class="nav-item">
                 <a class="nav-link">
@@ -37,6 +35,8 @@
             </li>
 
         </ul>
+
+
 
     </div>
 
