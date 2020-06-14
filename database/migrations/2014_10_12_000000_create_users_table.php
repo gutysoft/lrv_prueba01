@@ -34,4 +34,5 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('lrv_usuarios');
     }
+    
 }

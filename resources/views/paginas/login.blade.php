@@ -1,4 +1,5 @@
-<script src="{{ url('/') }}/js/plugins/notie.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/notie/4.3.1/notie.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/notie/4.3.1/notie.min.js"></script>
 
 <body class="hold-transition login-page">
     <div class="login-box">
